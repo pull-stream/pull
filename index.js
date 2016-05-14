@@ -1,11 +1,13 @@
-"use strict"
+'use strict'
 
 module.exports = function pull (a) {
   var length = arguments.length
+  var i
   if (typeof a === 'function' && a.length === 1) {
     var args = new Array(length)
-    for(var i = 0; i < length; i++)
+    for (i = 0; i < length; i++) {
       args[i] = arguments[i]
+    }
     return function (read) {
       args.unshift(read)
       return pull.apply(null, args)
@@ -18,7 +20,7 @@ module.exports = function pull (a) {
     read = read.source
   }
 
-  for (var i = 1; i < length; i++) {
+  for (i = 1; i < length; i++) {
     var s = arguments[i]
     if (typeof s === 'function') {
       read = s(read)

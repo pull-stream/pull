@@ -4,7 +4,7 @@
   "description": "pipe many pull streams into a pipeline",
   "main": "index.js",
   "scripts": {
-    "test": "tape test.js"
+    "test": "standard && tape test.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/pull-stream/pull#readme",
   "devDependencies": {
+    "standard": "^7.0.1",
     "tape": "^4.5.1"
   }
 }
